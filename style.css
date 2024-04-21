@@ -173,7 +173,8 @@ button:hover{
 
 #chk:checked ~ .signup label{
     
-    margin-top: 0px;
+    margin-top: 19px;
+    margin-left: 83px;
 }
 
 label:hover{
