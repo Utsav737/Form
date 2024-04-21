@@ -157,7 +157,7 @@ button:hover{
 }
 #chk:checked ~ .login{
     
-    transform: translateY(-450px);
+    transform: translateY(-471px);
     
 }
 #chk:checked ~ .login label{
@@ -192,27 +192,38 @@ label:hover{
 
 
 @media (width <= 500px) {
-   
+    
     input {
-
+        
         font-size: 1.3em;
     }
    #price{
-
-    font-size: 1.5em;
+       
+       font-size: 1.5em;
     font-weight: bolder;
     font-family: 'Courier New', Courier, monospace;
-   }
-  
- 
-  #chk:checked ~ .login{
+}
+
+
+#chk:checked ~ .login{
 
     background: linear-gradient(115deg, #f1a7f1, #fad0c4);
     
 }
 #about{
-
+    
     padding-top: 10px;
     text-align: right;
 }
+::placeholder{
+    color:  rgb(226, 251, 255);
 }
+button{
+    font-size: 23px;
+}
+}
+
+/* #chk:checked ~ .signup label{
+
+    margin-top: ;
+} */
