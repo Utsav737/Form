@@ -11,11 +11,11 @@
 <body>
     <div class="main"><input type="checkbox" ariea-hiddens="true" id="chk" onclick="change_text()">
         <div class="signup">
-            <form action="" method="get" novalidate>
+            <form action="https://script.google.com/macros/s/AKfycbyrnLVsvcdthtjuTx6oDxLj3Cywdego6tHIr_NH5oAueZnzq5wSQNFxlNcc-GCaOcni/exec" method="post" name="knit_data" novalidate>
                 <label for="chk" aria-hidden="true" id="demo">knit gaming tournment</label>
-                <input type="text" name="text" placeholder="player name" required="" maxlength="20" minlength="2" class="imp" >
+                <input type="text" name="user_name" placeholder="player name" required="" maxlength="20" minlength="2" class="imp" >
                 <input type="email" name="email" placeholder="email" required="" maxlength="20" minlength="6" class="imp">
-                <input type="tel" name="whatsup number" placeholder="whatsup number" required="" maxlength="10">
+                <input type="tel" name="whatsup_number" placeholder="whatsup number" required="" maxlength="10">
                 <button >register</button>
             </form>
         </div>
@@ -32,17 +32,31 @@
         </div>
 
     </div>
-    <script type="text/javascript">
-        function change_text(){
+    
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzOpU46iWyGTNaqqpKuu6faDA0Cdq4sZJxJ2bvbsSvyfgN4Kzg9MQLkXAMQsgCO6rA/exec'
+  const form = document.forms['knit_data']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+
+  function change_text(){
             var cb = document.getElementById("chk");
             if(cb.checked==true){
-            document.getElementById("demo").innerHTML="register";}
+            document.getElementById("demo").innerHTML="register";
+            
+        }
             else{
                 document.getElementById("demo").innerHTML="knit gaming tourment" ; 
             }
         }
+</script>
 
-    </script>
 </body>
 
 </html>
