@@ -10,52 +10,50 @@
 
 <body>
     <div class="main"><input type="checkbox" ariea-hiddens="true" id="chk" onclick="change_text()">
-        <div class="signup">
-            <form action="https://script.google.com/macros/s/AKfycbyrnLVsvcdthtjuTx6oDxLj3Cywdego6tHIr_NH5oAueZnzq5wSQNFxlNcc-GCaOcni/exec" method="post" name="knit_data" novalidate>
-                <label for="chk" aria-hidden="true" id="demo">knit gaming tournment</label>
-                <input type="text" name="user_name" placeholder="player name" required="" maxlength="20" minlength="2" class="imp" >
-                <input type="email" name="email" placeholder="email" required="" maxlength="20" minlength="6" class="imp">
-                <input type="tel" name="whatsup_number" placeholder="whatsup number" required="" maxlength="10">
-                <button >register</button>
+
+
+        <div class="popup" id="ok_form">
+
+            <img src="404-tick.png">
+            <h2>thank you !</h2>
+            <p>your details has been successfully submitted. thanks!</p>
+            <button type="button" onclick="close_popup()"> ok </button>
+            
+        </div>
+        <div class="signup " id="signup_id">
+            <form
+                action="https://script.google.com/macros/s/AKfycbyrnLVsvcdthtjuTx6oDxLj3Cywdego6tHIr_NH5oAueZnzq5wSQNFxlNcc-GCaOcni/exec"
+                method="post" name="knit_data" autocomplete="off" >
+                <label for="chk" aria-hidden="true" id="demo">form</label>
+                <input type="text" name="user_name" placeholder="player name" required maxlength="20" minlength="2"
+                    class="imp">
+                <input type="email" name="email" autocomplete="new-password , off" placeholder="email" required
+                    maxlength="30" minlength="6" class="imp">
+                <input type="tel" name="whatsup_number" placeholder="whatsup number" required maxlength="10">
+                <button id="register" type="reset" onclick="open_popup()"><i>register</i></button>
+                <!-- <button type="reset"> reset </button> -->
+                
             </form>
         </div>
-        <div class="login">
-           
+        <div class="login" id="login_id">
+
             <label for="chk" aria-hidden="true" id="about">about price</label>
             <div id="price">
 
-                
+
                 1 - 50 rupees <br>
                 2 - 20 rupees <br>
-                3 - 10 rupees 
+                3 - 10 rupees
             </div>
         </div>
 
     </div>
-    
 
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzOpU46iWyGTNaqqpKuu6faDA0Cdq4sZJxJ2bvbsSvyfgN4Kzg9MQLkXAMQsgCO6rA/exec'
-  const form = document.forms['knit_data']
 
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
+    <script src="ja.js">
+        
 
-  function change_text(){
-            var cb = document.getElementById("chk");
-            if(cb.checked==true){
-            document.getElementById("demo").innerHTML="register";
-            
-        }
-            else{
-                document.getElementById("demo").innerHTML="knit gaming tourment" ; 
-            }
-        }
-</script>
+    </script>
 
 </body>
 

@@ -6,6 +6,28 @@
     
     
 }
+
+
+.popup{
+
+/* border: 2px solid black; */
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+transform: scale(0.001);
+}
+.popup p {
+    padding-left: 50px;
+}
+.popup_imp{
+
+    transform: scale(1);
+    background-color: #fff;
+}
+
 #chk:checked ~ .login{
     background: linear-gradient(115deg, #f1a7f1, #fad0c4);
     background: linear-gradient(115deg, #fdfcfb, #e2d1c3);
@@ -17,11 +39,11 @@
     font-size: 1em;
 }
 .login{
-
+    
     height: 460px;
     background: #eee;
     border-radius: 50%  / 10% ; 
-    transform: translateY(-165px);
+    transform: translateY(-665px);
     transition: 1s ease-in-out;
     text-align: center;
    
@@ -59,11 +81,12 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
     display: none;
 }
 .signup{
-
+    
     position: relative;
     width: 100%;
     height: 100%;
-
+    transform: translateY(-500px);
+    
 }
 
 label{
@@ -125,7 +148,7 @@ button{
 }
 
 button:hover{
-
+    
     background: #6d44b8;
 }
 
@@ -134,7 +157,7 @@ button:hover{
     width: 80%;
     height: 250px; 
     background: rgb(247,127,0);
-   
+    
     background: linear-gradient(90deg, rgba(247,127,0,1) 0%, rgba(252,191,73,1) 35%, rgba(234,226,183,1) 100%);
     background-image: url(photo.jpg);
     background-size: cover;
@@ -157,7 +180,7 @@ button:hover{
 }
 #chk:checked ~ .login{
     
-    transform: translateY(-471px);
+    transform: translateY(-980px);
     
 }
 #chk:checked ~ .login label{
@@ -178,14 +201,14 @@ button:hover{
 }
 
 label:hover{
-
+    
     transform: scale(1.1);
     transition: .3s ease-in-out;
     
-   
+    
 }
 #about:hover{
-
+    
     transform: scale(.8);
     transition: .3s ease-in-out;
 }
@@ -224,7 +247,11 @@ button{
 }
 }
 
-/* #chk:checked ~ .signup label{
+.signup_chg{
 
-    margin-top: ;
-} */
+    transform: scale(0);
+}
+.login_chg{
+
+    transform: scale(0);
+}
