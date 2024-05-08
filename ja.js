@@ -39,3 +39,31 @@ let close_popup= () =>{
     signup_change.classList.remove("signup_chg") ; 
     login_id.classList.remove("login_chg") ; 
 }
+
+ 
+
+function check_submition(){
+
+    let number = document.querySelector("#number").value ; 
+let email = document.querySelector("#email").value ; 
+let text = document.querySelector("#text").value ;
+
+
+    if(number =="" || text == "" || email == ""){
+        alert("enter complete information ")  ;
+        return false ; 
+    }
+    else if(number.length < 10 || number.length > 10){
+
+        alert("Number should be of 10 digit ! Please enter valid number. ") ; 
+    }
+    else if(isNaN(number)){
+
+        alert("Only number are allowed ! Please enter valid number. ");
+    }
+    
+    else{
+
+        open_popup() ; 
+    }
+}

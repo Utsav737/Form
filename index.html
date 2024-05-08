@@ -23,14 +23,14 @@
         <div class="signup " id="signup_id">
             <form
                 action="https://script.google.com/macros/s/AKfycbyrnLVsvcdthtjuTx6oDxLj3Cywdego6tHIr_NH5oAueZnzq5wSQNFxlNcc-GCaOcni/exec"
-                method="post" name="knit_data" autocomplete="off" >
+                method="post" name="knit_data" autocomplete="off"  >
                 <label for="chk" aria-hidden="true" id="demo">form</label>
                 <input type="text" name="user_name" placeholder="player name" required maxlength="20" minlength="2"
-                    class="imp">
+                    class="imp" id="text">
                 <input type="email" name="email" autocomplete="new-password , off" placeholder="email" required
-                    maxlength="30" minlength="6" class="imp">
-                <input type="tel" name="whatsup_number" placeholder="whatsup number" required maxlength="10">
-                <button id="register" type="reset" onclick="open_popup()"><i>register</i></button>
+                    maxlength="30" minlength="6" class="imp" id="email">
+                <input type="tel" name="whatsup_number" placeholder="whatsup number" required maxlength="10" class = "imp" id="number">
+                <button id="register" type="reset" onclick="check_submition()"><i>register</i></button>
                 <!-- <button type="reset"> reset </button> -->
                 
             </form>
