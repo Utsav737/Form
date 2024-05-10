@@ -1,12 +1,12 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzOpU46iWyGTNaqqpKuu6faDA0Cdq4sZJxJ2bvbsSvyfgN4Kzg9MQLkXAMQsgCO6rA/exec'
-        const form = document.forms['knit_data']
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw0rvWfQBS1PxU7lDX5HF5PXmgGs8f3ahnnJAEhp5hvlRlU2OkccgFYuh2I-Bm_TasS/exec'
+const form = document.forms['knit_form']
 
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => console.log('Success!', response))
-                .catch(error => console.error('Error!', error.message))
-        })
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+})
 
 
 
@@ -47,21 +47,58 @@ function check_submition(){
     let number = document.querySelector("#number").value ; 
 let email = document.querySelector("#email").value ; 
 let text = document.querySelector("#text").value ;
-
-
+let number_startingDigit = /^[7-9]\d{9}$/;
+let email_validation = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
     if(number =="" || text == "" || email == ""){
-        alert("enter complete information ")  ;
+        // alert("information is incompleted !")  ;
+        swal({
+            title: "Incomplete Information !",
+            text: "please fill out all required fields !",
+            icon: "warning",
+            button: "ok",
+          });
         return false ; 
     }
     else if(number.length < 10 || number.length > 10){
 
-        alert("Number should be of 10 digit ! Please enter valid number. ") ; 
+        // alert("Number should be of 10 digit ! Please enter valid number. ") ; 
+        swal({
+            title: "Invalid Number !",
+            text: "number should be of 10 digits",
+            icon: "warning",
+            button: "ok",
+          });
     }
     else if(isNaN(number)){
 
-        alert("Only number are allowed ! Please enter valid number. ");
+        // alert("Only number are allowed ! Please enter valid number. ");
+        swal({
+            title: "Invalid ",
+            text: "only numbers are allowed !",
+            icon: "warning",
+            button: "ok",
+          });
     }
-    
+    else if (!number_startingDigit.test(number)){
+
+        // alert("Please enter valid number !") ; 
+        swal({
+            title: "Invalid Number !",
+            text: "please enter valid number ",
+            icon: "warning",
+            button: "ok",
+          });
+    }
+    else if(!email_validation.test(email)){
+
+        // alert("Please enter valid email !") ; 
+        swal({
+            title: "Invalid Email !",
+            text: "please enter valid email",
+            icon: "warning",
+            button: "ok",
+          });
+    }
     else{
 
         open_popup() ; 
