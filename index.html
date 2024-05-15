@@ -4,12 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GamingClub</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="knit gaming club logo.png" type="image/x-icon">
 </head>
 
-<body>
+<body onload="loader_1()">
+   
+        <div class="loader" id="loader"></div>
+        
+    <div id="pre" class="pre"></div>
     <div class="main"><input type="checkbox" ariea-hiddens="true" id="chk" onclick="change_text()">
 
 
@@ -18,13 +23,13 @@
             <img src="404-tick.png">
             <h2>thank you !</h2>
             <p>your details has been successfully submitted. thanks!</p>
-            <button type="button" onclick="close_popup()"> ok </button>
+            <button type="button" onclick="close_popup()"> OK </button>
             
         </div>
         <div class="signup " id="signup_id">
             <form method="post" name="knit_form" autocomplete="off" class="form" >
-                <label for="chk" aria-hidden="true" id="demo">form</label>
-                <input type="text" name="user_name" placeholder="player name" required maxlength="20" minlength="2"
+                <label for="chk" aria-hidden="true" id="demo">knit gaming tournment</label>
+                <input type="text" name="user_name" placeholder="team name" required maxlength="20" minlength="2"
                     class="imp" id="text">
                 <input type="email" name="email" autocomplete="new-password , off" placeholder="email" required
                     maxlength="30" minlength="6" class="imp" id="email">
@@ -50,7 +55,7 @@
 
 
 <script src="ja.js">      
-
+  
     </script>
 
 </body>

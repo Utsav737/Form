@@ -10,6 +10,20 @@ form.addEventListener('submit', e => {
 
 
 
+let preloader = document.querySelector("#pre") ; 
+let loader = document.querySelector(".loader") ; 
+
+function my_loader() {
+    console.log("hello") ; 
+    preloader.classList.add("after_loading") ; 
+    loader.classList.add("after_loading") ; 
+}
+function loader_1(){
+    var myTime = setTimeout(my_loader , 5000) ; 
+   
+ }
+ 
+
         function change_text() {
             var cb = document.getElementById("chk");
             if (cb.checked == true) {
@@ -17,7 +31,7 @@ form.addEventListener('submit', e => {
 
             }
             else {
-                document.getElementById("demo").innerHTML = "form";
+                document.getElementById("demo").innerHTML = "knit gaming tournment";
             }
         }
 
@@ -49,13 +63,14 @@ let email = document.querySelector("#email").value ;
 let text = document.querySelector("#text").value ;
 let number_startingDigit = /^[7-9]\d{9}$/;
 let email_validation = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
+
     if(number =="" || text == "" || email == ""){
         // alert("information is incompleted !")  ;
         swal({
             title: "Incomplete Information !",
             text: "please fill out all required fields !",
             icon: "warning",
-            button: "ok",
+            button: "OK",
           });
         return false ; 
     }
@@ -66,7 +81,7 @@ let email_validation = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             title: "Invalid Number !",
             text: "number should be of 10 digits",
             icon: "warning",
-            button: "ok",
+            button: "OK",
           });
     }
     else if(isNaN(number)){
@@ -76,7 +91,7 @@ let email_validation = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             title: "Invalid ",
             text: "only numbers are allowed !",
             icon: "warning",
-            button: "ok",
+            button: "OK",
           });
     }
     else if (!number_startingDigit.test(number)){
@@ -86,7 +101,7 @@ let email_validation = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             title: "Invalid Number !",
             text: "please enter valid number ",
             icon: "warning",
-            button: "ok",
+            button: "OK",
           });
     }
     else if(!email_validation.test(email)){
@@ -96,7 +111,7 @@ let email_validation = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             title: "Invalid Email !",
             text: "please enter valid email",
             icon: "warning",
-            button: "ok",
+            button: "OK",
           });
     }
     else{
